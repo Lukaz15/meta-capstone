@@ -7,3 +7,4 @@ export * from "./Video";
 export * from "./Section";
 export * from "./Paragraph";
 export * from "./Span";
+export * from "./Article";

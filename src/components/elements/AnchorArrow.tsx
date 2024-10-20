@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { useSection } from "../../context/SectionContext";
+import { ElementBase } from "../../custom_types/customTypes";
 
-interface AnchorProps {
-    children?: React.ReactNode;
+interface AnchorProps extends ElementBase {
     to: React.ReactElement;
     type: 'button-right' | 'button-left' | 'navigation'
 }

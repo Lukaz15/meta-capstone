@@ -26,41 +26,13 @@ const StyledSection = styled.section<SectionProps>`
 
 
 
-    article {
-        margin-top: 15vh;
-    }
-
-
     ${(props) => props.$currentSectionName === "About" && `
-        article {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            font-size: 1.25rem;
-        }
-
         article img {
             margin: auto;
             width: 30%;
             margin-left: 2.5vw;
             aspect-ratio: 1 / 1;
             object-fit: cover;
-        }
-
-        article p {
-            background-color: var(--background);
-            font-weight: light;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            width: 50%;
-            margin-right: 2.5vw;
-            padding: 10px;
-        }
-
-        article span {
-            font-size: 3rem;
-            font-weight: bolder;
         }
     `}
 

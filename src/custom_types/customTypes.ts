@@ -1,6 +1,9 @@
 import * as sections from "../components/sections";
+import { css } from "styled-components";
 
 export type SectionNames = keyof typeof sections | undefined;
+
+export type cssString = ReturnType<typeof css>;
 
 export interface SectionComponent extends React.FC {
   index: number;
