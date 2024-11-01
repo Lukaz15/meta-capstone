@@ -1,13 +1,16 @@
 import styled from "styled-components";
-import { ElementBase } from "../../custom_types/customTypes";
+import { navigationBase } from "../../custom_types/customTypes";
+import { withNavigationTo } from "../HOCs/withNavigationTo";
+import React, { useRef } from "react";
 
-interface AnchorProps extends ElementBase {
-    to: React.ReactElement;
+interface AnchorProps extends navigationBase {
+    to: React.ReactElement
 }
 
 const StyledAnchor = styled.a<AnchorProps>`
     font-family: Anton, Kalam, "Shadows Into Light";
     margin: 1vw;
+    width: min-content;
     text-decoration: none;
     cursor: pointer;
     color: var(--main);
@@ -16,17 +19,26 @@ const StyledAnchor = styled.a<AnchorProps>`
     z-index: 1;
     pointer-events: all;
     border-bottom: 6px solid var(--main);
+
     &:hover {
     color: var(--secondary);
     text-shadow: 3px 7px 9px rgba(0, 0, 0, 1);
     border-color: var(--secondary);
 
     }
+// Remove the border-bottom if the content inside <AnchorNavigation> is a React element, to remove the underline.
+    ${(props) => React.isValidElement(props.children) && `
+    border-bottom: 0;
+    `
+    }
 `
-export const Anchor: React.FC<AnchorProps> = ({ children, ...props }) => {
+export const AnchorNavigation = withNavigationTo<AnchorProps>(({ children, ...props }): React.ReactElement => {
+    const childrenRef = useRef(children)
+    console.log(childrenRef)
+
     return (
-        <StyledAnchor {...props}>
+        <StyledAnchor {...props} onClick={() => props.$goToSection ? props.$goToSection(props.to) : null}>
             {children}
         </StyledAnchor>
     )
-}
+})

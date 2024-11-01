@@ -1,11 +1,9 @@
 import { SectionComponent } from "../../custom_types/customTypes"
-import { Anchor, Section } from "../elements"
-import { About, Book } from "./"
+import { Section } from "../elements"
 
 export const Dishes: SectionComponent = (): React.ReactNode => {
 
     return (<Section >
-        <Anchor type="button-left" to={<About />} />
         <div id="dish-wrapper">
             <h1>Most popular dishes</h1>
             <article>
@@ -48,7 +46,6 @@ export const Dishes: SectionComponent = (): React.ReactNode => {
                 />
             </article>
         </div>
-        <Anchor type="button-right" to={<Book />} />
     </Section>
 
     )

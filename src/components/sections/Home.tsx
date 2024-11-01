@@ -1,6 +1,5 @@
 import Webpage from "../../assets/videos/Webpage.mp4"
-import { Section, Anchor, Video, Paragraph, Span, Article } from "../elements"
-import { About } from "./"
+import { Section, Video, Paragraph, Span, Article } from "../elements"
 import { SectionComponent } from "../../custom_types/customTypes";
 
 
@@ -16,7 +15,6 @@ export const Home: SectionComponent = (): React.ReactNode => {
                     dedication.
                 </Paragraph>
             </Article>
-            <Anchor type="button-right" to={<About />} />
         </Section>
     )
 }

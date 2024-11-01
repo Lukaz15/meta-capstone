@@ -4,7 +4,6 @@ import { ElementBase } from "../../custom_types/customTypes";
 
 interface AnchorProps extends ElementBase {
     to: React.ReactElement;
-    type: 'button-right' | 'button-left' | 'navigation'
 }
 
 const StyledAnchor = styled.a<AnchorProps>`
@@ -41,14 +40,9 @@ const StyledAnchor = styled.a<AnchorProps>`
 
     }
 `
-export const Anchor: React.FC<AnchorProps> = ({ children, ...props }) => {
+export const AnchorArrow: React.FC<AnchorProps> = ({ children, ...props }) => {
     const { goToSection } = useSection()
 
-    props.type === "button-left"
-        ? children = "chevron_left"
-        : props.type === "button-right"
-            ? children = "chevron_right"
-            : null
 
     return (
         <StyledAnchor onClick={() => goToSection(props.to)} className={'material-symbols-outlined'}  {...props}>

@@ -4,7 +4,6 @@ import { withCurrentSectionName } from "../HOCs/withCurrentSectionName";
 import { stylesPerSection } from "../../utils/stylesPerSection";
 
 interface SpanProps extends ElementBase {
-
 }
 
 const StyledSpan = styled.span<SpanProps>`

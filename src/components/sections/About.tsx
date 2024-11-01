@@ -1,11 +1,9 @@
 import { SectionComponent } from "../../custom_types/customTypes";
-import { Section, Anchor, Img, Paragraph, Article, Span } from "../elements";
-import { Home, Dishes } from "./"
+import { Section, Img, Paragraph, Article, Span } from "../elements";
 
 export const About: SectionComponent = (): React.ReactNode => {
     return (
         <Section >
-            <Anchor type="button-left" to={<Home />} />
             <Article>
                 <Img src="https://i.postimg.cc/vTC6ngL8/Web-Page-edited-1.png" />
                 <Paragraph >
@@ -20,7 +18,6 @@ export const About: SectionComponent = (): React.ReactNode => {
                     Come experience Little Lemon's vibrant flavors and warm hospitality!
                 </Paragraph>
             </Article>
-            <Anchor type="button-right" to={<Dishes />} />
         </Section>
     )
 }
