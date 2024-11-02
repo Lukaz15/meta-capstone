@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import { navigationBase } from "../../custom_types/customTypes";
 import { withNavigationTo } from "../HOCs/withNavigationTo";
-import React, { useRef } from "react";
+import React from "react";
 
-interface AnchorProps extends navigationBase {
-    to: React.ReactElement
-}
+interface AnchorProps extends navigationBase { }
 
 const StyledAnchor = styled.a<AnchorProps>`
     font-family: Anton, Kalam, "Shadows Into Light";
@@ -33,11 +31,9 @@ const StyledAnchor = styled.a<AnchorProps>`
     }
 `
 export const AnchorNavigation = withNavigationTo<AnchorProps>(({ children, ...props }): React.ReactElement => {
-    const childrenRef = useRef(children)
-    console.log(childrenRef)
 
     return (
-        <StyledAnchor {...props} onClick={() => props.$goToSection ? props.$goToSection(props.to) : null}>
+        <StyledAnchor onClick={() => props.$goToSection ? props.$goToSection(props.$to) : null} {...props}>
             {children}
         </StyledAnchor>
     )

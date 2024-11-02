@@ -4,11 +4,11 @@ import { ElementBase } from "../../custom_types/customTypes";
 interface ImgProps extends ElementBase {
     src: string;
     alt?: string;
-    header?: boolean;
+    $header?: boolean;
 }
 
 const StyledImg = styled.img<ImgProps>`
-    ${(props) => props.header && `
+    ${(props) => props.$header && `
         width: 250px;
         height: auto;
         cursor: inherit;

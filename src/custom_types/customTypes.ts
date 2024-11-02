@@ -5,7 +5,7 @@ export type SectionNames = keyof typeof sections | undefined;
 
 export type cssString = ReturnType<typeof css>;
 
-type goToSectionType = (section: React.ReactElement) => void;
+type goToSectionType = (section: number) => void;
 
 export interface SectionComponent extends React.FC {
   index: number;
@@ -18,6 +18,7 @@ export interface ElementBase {
 }
 export interface navigationBase extends ElementBase {
   $goToSection?: goToSectionType;
+  $to: number;
 }
 
 export interface SectionContextType {

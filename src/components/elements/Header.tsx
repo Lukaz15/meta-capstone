@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Home, About, Dishes, Book } from '../sections';
+import * as sections from '../sections';
 import { Img, Nav, Ul } from "../elements"
 import { ElementBase } from '../../custom_types/customTypes';
 import { AnchorNavigation } from './AnchorNavigation';
@@ -20,14 +20,14 @@ const StyledHeader = styled.header<HeaderProps>`
 export const Header: React.FC<HeaderProps> = ({ children, ...props }) => {
     return (
         <StyledHeader {...props}>
-            <AnchorNavigation to={<Home />}>
-                <Img header src="https://i.postimg.cc/ht1bks19/Asset-14-4x.png" alt="little-lemon-logo" />
+            <AnchorNavigation $to={sections.Home.index}>
+                <Img $header src="https://i.postimg.cc/ht1bks19/Asset-14-4x.png" alt="little-lemon-logo" />
             </AnchorNavigation>
             <Nav>
                 <Ul>
-                    <AnchorNavigation to={<About />}>About</AnchorNavigation>
-                    <AnchorNavigation to={<Dishes />}>Dishes</AnchorNavigation>
-                    <AnchorNavigation to={<Book />}>Book</AnchorNavigation>
+                    <AnchorNavigation $to={sections.About.index}>About</AnchorNavigation>
+                    <AnchorNavigation $to={sections.Dishes.index}>Dishes</AnchorNavigation>
+                    <AnchorNavigation $to={sections.Book.index}>Book</AnchorNavigation>
                 </Ul>
             </Nav>
         </StyledHeader>
